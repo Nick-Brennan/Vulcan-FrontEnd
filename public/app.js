@@ -1,9 +1,13 @@
 $(function(){
 	console.log("running");
 	getMatches();
-	var now = moment();
-	console.log(now);
-	$('#now').html(now.format("dddd, MMMM Do YYYY, h:mm:ss a"));
+	
+	setInterval(function(){
+		var now = moment();
+		$('#now').html('');
+		$('#now').html(now.format("dddd, MMMM Do YYYY, h:mm:ss a"));
+	}, 1000);
+	
 
 	$('#search').submit(function(e){
 		console.log("default prevented!");
